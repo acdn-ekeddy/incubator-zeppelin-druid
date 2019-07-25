@@ -35,7 +35,7 @@
     <url>http://zeppelin.incubator.apache.org</url>
 
     <properties>
-        <cassandra.driver.version>2.1.7.1</cassandra.driver.version>
+        <cassandra.driver.version>4.0.0</cassandra.driver.version>
         <snappy.version>1.0.5.4</snappy.version>
         <lz4.version>1.2.0</lz4.version>
         <scala.version>2.11.7</scala.version>
