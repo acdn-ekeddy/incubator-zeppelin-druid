@@ -36,14 +36,14 @@
   
 
   <properties>
-    <spark.version>1.4.1</spark.version>
+    <spark.version>2.2.0</spark.version>
     <scala.version>2.10.4</scala.version>
     <scala.binary.version>2.10</scala.binary.version>
 
     <hadoop.version>2.3.0</hadoop.version>
     <yarn.version>${hadoop.version}</yarn.version>
     <avro.version>1.7.7</avro.version>
-    <avro.mapred.classifier></avro.mapred.classifier>
+    <avro.mapred.classifier/>
     <jets3t.version>0.7.1</jets3t.version>
     <protobuf.version>2.4.1</protobuf.version>
 
@@ -358,7 +358,7 @@
 
       </dependencies>
       <properties>
-        <spark.version>1.1.1</spark.version>
+        <spark.version>2.2.0</spark.version>
         <akka.version>2.2.3-shaded-protobuf</akka.version>
       </properties>
     </profile>
@@ -379,7 +379,7 @@
         </dependency>
       </dependencies>
       <properties>
-        <spark.version>1.1.1</spark.version>
+        <spark.version>2.2.0</spark.version>
         <akka.version>2.2.3-shaded-protobuf</akka.version>
       </properties>
     </profile>
@@ -389,14 +389,14 @@
       <dependencies>
       </dependencies>
       <properties>
-        <spark.version>1.2.1</spark.version>
+        <spark.version>2.2.0</spark.version>
       </properties>
     </profile>
 
     <profile>
       <id>cassandra-spark-1.2</id>
       <properties>
-        <spark.version>1.2.1</spark.version>
+        <spark.version>2.2.0</spark.version>
       </properties>
       <dependencies>
         <dependency>
@@ -417,7 +417,7 @@
       <id>spark-1.3</id>
 
       <properties>
-        <spark.version>1.3.1</spark.version>
+        <spark.version>2.2.0</spark.version>
       </properties>
 
       <dependencies>
@@ -428,7 +428,7 @@
     <profile>
       <id>cassandra-spark-1.3</id>
       <properties>
-        <spark.version>1.3.0</spark.version>
+        <spark.version>2.2.0</spark.version>
       </properties>
 
       <dependencies>
@@ -449,7 +449,7 @@
    <profile>
       <id>spark-1.4</id>
       <properties>
-        <spark.version>1.4.1</spark.version>
+        <spark.version>2.2.0</spark.version>
       </properties>
 
       <dependencies>
@@ -459,7 +459,7 @@
     <profile>
       <id>cassandra-spark-1.4</id>
       <properties>
-        <spark.version>1.4.1</spark.version>
+        <spark.version>2.2.0</spark.version>
       </properties>
 
       <dependencies>
@@ -480,7 +480,7 @@
     <profile>
       <id>spark-1.5</id>
       <properties>
-        <spark.version>1.5.2</spark.version>
+        <spark.version>2.2.0</spark.version>
         <akka.group>com.typesafe.akka</akka.group>
         <akka.version>2.3.11</akka.version>
         <protobuf.version>2.5.0</protobuf.version>
@@ -493,7 +493,7 @@
     <profile>
       <id>cassandra-spark-1.5</id>
       <properties>
-        <spark.version>1.5.1</spark.version>
+        <spark.version>2.2.0</spark.version>
         <akka.group>com.typesafe.akka</akka.group>
         <akka.version>2.3.11</akka.version>
         <protobuf.version>2.5.0</protobuf.version>
@@ -783,11 +783,8 @@
                 <configuration>
                   <target>
                     <delete dir="../interpreter/spark/pyspark"/>
-                    <copy todir="../interpreter/spark/pyspark"
-                        file="${project.build.directory}/spark-dist/spark-${spark.version}/python/lib/py4j-${py4j.version}-src.zip"/>
-                    <zip destfile="${project.build.directory}/../../interpreter/spark/pyspark/pyspark.zip"
-                         basedir="${project.build.directory}/spark-dist/spark-${spark.version}/python"
-                         includes="pyspark/*.py,pyspark/**/*.py"/>
+                    <copy todir="../interpreter/spark/pyspark" file="${project.build.directory}/spark-dist/spark-${spark.version}/python/lib/py4j-${py4j.version}-src.zip"/>
+                    <zip destfile="${project.build.directory}/../../interpreter/spark/pyspark/pyspark.zip" basedir="${project.build.directory}/spark-dist/spark-${spark.version}/python" includes="pyspark/*.py,pyspark/**/*.py"/>
                   </target>
                 </configuration>
               </execution>
